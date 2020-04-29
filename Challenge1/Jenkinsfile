@@ -2,6 +2,14 @@ pipeline {
     agent any
 
     stages {
+        stage('Cloning the repo') {
+            steps {
+                checkout scm
+                pwd 
+                ls
+            }
+        }
+        
         stage('Run unit testing..') {
             steps {
                 sh "python3 '${env.UNIT_TEST_PATH}'"
