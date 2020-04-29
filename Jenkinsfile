@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build the images stage') {
             steps {
-                sh "docker-compose up"
+                sh "sudo docker-compose up"
             }
         }
         stage('Testing stage') {
