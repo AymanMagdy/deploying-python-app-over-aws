@@ -5,7 +5,8 @@ pipeline {
     stages {
         stage('Build the images stage') {
             steps {
-                sh "cd /home/aymansoliman/Desktop/AymanData/Work/ITI/Intake\ 40/solving-devops-challenges; docker-compose up"
+                sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
+                sh "docker-compose up /solving-devops-challenges"
             }
         }
         stage('Testing stage') {
