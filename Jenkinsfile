@@ -3,9 +3,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build the images stage') {
+        stage('Run the containers..') {
             steps {
-                sh "docker-compose up /solving-devops-challenges --verbose"
+                sh "docker-compose -f /home/aymansoliman/Desktop/AymanData/Work/ITI/Intake\ 40/solving-devops-challenges/docker-compose.yml up "
             }
         }
         stage('Testing stage') {
