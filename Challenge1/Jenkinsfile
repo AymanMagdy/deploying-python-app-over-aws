@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Run unit testing') {
             steps {
-                echo ''
+                sh "python3 '${env.UNIT_TEST_PATH}'"
             }
         }
 
