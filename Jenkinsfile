@@ -6,7 +6,7 @@ pipeline {
         stage('Build the images stage') {
             steps {
                 sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
-                sh "docker-compose up /solving-devops-challenges"
+                sh "docker-compose up /solving-devops-challenges --verbose"
             }
         }
         stage('Testing stage') {
