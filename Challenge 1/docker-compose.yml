@@ -1,0 +1,15 @@
+version: '3'
+services: 
+  redis:
+    image: redis:latest
+    expose: 
+      - 6379
+
+  python-app:
+    image: python:alpine
+    build: .
+    ports: 
+      - 3000:3000
+    depends_on: 
+      - redis
+      
