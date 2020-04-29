@@ -11,13 +11,13 @@ pipeline {
 
         stage('Run unit testing..') {
             steps {
-                sh "python3 '${env.UNIT_TEST_PATH}'"
+                sh "python3 App/tests/test.py"
             }
         }
 
         stage('Run the containers..') {
             steps {
-                sh "docker-compose -f '${env.DOCKER_COMPOSE_PATH}' up -d"
+                sh "docker-compose up -d"
             }
         }
 
