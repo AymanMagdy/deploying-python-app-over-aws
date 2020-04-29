@@ -5,8 +5,7 @@ pipeline {
         stage('Cloning the repo') {
             steps {
                 checkout scm
-                pwd 
-                ls
+                sh "ls"
             }
         }
         
