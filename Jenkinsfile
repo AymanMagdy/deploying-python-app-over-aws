@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build the images stage') {
             steps {
-                sh "docker-compose up"
+                sh "cd /home/aymansoliman/Desktop/AymanData/Work/ITI/Intake 40/solving-devops-challenges; docker-compose up"
             }
         }
         stage('Testing stage') {
