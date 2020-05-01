@@ -29,15 +29,18 @@ pipeline {
 
         stage ('Run UAT testing..') {
             steps{
-                echo "In this stage we should apply the integration testing after running the containers."
+                echo "In this stage we should apply the UAT testing."
             }
         }
 
-        stage('Deployment to Cloud') {
+        stage('Deployment to AWS') {
             steps {
-                echo 'To SSH on the machine.'
-                echo 'Clone the project on the machine.'
-                echo 'Run docker-compose up command on the machine'
+                sh "ssh ubuntu@3.82.161.46"
+                sh "cd ~/python-app-production"
+                sh "rm -rf *"
+                sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
+                sh "docker-compose up -d"
+                sh "exit"
             }   
         }
     }
