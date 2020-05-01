@@ -35,7 +35,7 @@ pipeline {
 
         stage('Deployment to AWS') {
             steps {
-                sh "ssh ubuntu@3.82.161.46"
+                sh "ssh ubuntu@18.208.115.253"
                 sh "cd ~/python-app-production"
                 sh "rm -rf *"
                 sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
