@@ -1,5 +1,5 @@
 FROM python:alpine
-ENV REDIS_HOST=redis
+ENV REDIS_HOST=redis_container
 ENV REDIS_PORT=6379
 ENV REDIS_DB=0
 ENV ENVIRONMENT=dev 
