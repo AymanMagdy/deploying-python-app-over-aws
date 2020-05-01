@@ -27,9 +27,17 @@ pipeline {
             }
         }
 
+        stage ('Run UAT testing..') {
+            steps{
+                echo "In this stage we should apply the integration testing after running the containers."
+            }
+        }
+
         stage('Deployment to Cloud') {
             steps {
-                echo 'Here will deploy to AWS.'
+                echo 'To SSH on the machine.'
+                echo 'Clone the project on the machine.'
+                echo 'Run docker-compose up command on the machine'
             }   
         }
     }

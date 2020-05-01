@@ -6,7 +6,7 @@ services:
       - 6379
 
   python-app:
-    image: python-app:production
+    image: python:alpine
     build: .
     ports: 
       - 3000:3000
