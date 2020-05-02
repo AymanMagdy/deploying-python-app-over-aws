@@ -1,6 +1,7 @@
 pipeline {
-    agent any
-
+    agent {
+        label 'ubuntu'
+    }
     stages {
 
         stage('Cloning SCM') {
@@ -34,9 +35,6 @@ pipeline {
         }
 
         stage('Deployment to AWS') {
-            agent {
-                label 'ubuntu'
-            }
             steps {
                 sh "cd ~/python-app-production"
                 sh "rm -rf *"
