@@ -16,12 +16,6 @@ pipeline {
             }
         }
 
-        stage('Run the containers..') {
-            steps {
-                sh "docker-compose up -d"
-            }
-        }
-
         stage ('Run integration testing..') {
             steps{
                 echo "In this stage we should apply the integration testing after running the containers."
@@ -39,7 +33,7 @@ pipeline {
                 sh "cd ~/python-app-production"
                 sh "rm -rf *"
                 sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
-                sh "docker-compose up -d"
+                sh "docker-compose -f ~/python-app-production/solving-devops-challenges/docker-compose.yml up -d"
                 sh "exit"
             }   
         }
