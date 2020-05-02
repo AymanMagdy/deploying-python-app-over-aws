@@ -31,7 +31,7 @@ pipeline {
         stage('Deployment to AWS') {
             steps {
                 sh "cd ~/python-app-production"
-                sh "rm -rf *"
+                sh "rm -rf ~/python-app-production/*"
                 sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
                 sh "docker-compose -f ~/python-app-production/solving-devops-challenges/docker-compose.yml up -d"
                 sh "exit"
