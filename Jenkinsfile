@@ -31,7 +31,7 @@ pipeline {
         stage('Clone to AWS') {
             steps {
                 sh "rm -rf ~/python-app-production/*"
-                sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
+                sh "git clone ~/python-app-production/https://github.com/AymanMagdy/solving-devops-challenges.git"
             }   
         }
 
