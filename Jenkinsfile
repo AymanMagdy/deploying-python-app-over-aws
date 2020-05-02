@@ -28,10 +28,9 @@ pipeline {
             }
         }
 
-        stage('Clone to AWS') {
+        stage('Clone to updated version to AWS') {
             steps {
-                sh "rm -rf ~/python-app-production/*"
-                sh "git clone ~/python-app-production/https://github.com/AymanMagdy/solving-devops-challenges.git"
+                sh "./clone_repo.sh"
             }   
         }
 
