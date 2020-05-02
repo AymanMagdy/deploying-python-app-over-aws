@@ -30,7 +30,7 @@ pipeline {
 
         stage('Clone to updated version to AWS') {
             steps {
-                sh "ls"
+                sh "./clone_repo.sh"
             }   
         }
 
