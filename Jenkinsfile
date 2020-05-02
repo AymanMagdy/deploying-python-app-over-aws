@@ -28,6 +28,20 @@ pipeline {
             }
         }
 
+        stage('Clone to AWS') {
+            steps {
+                sh "cd ~/python-app-production"
+                sh "rm -rf ~/python-app-production/*"
+                sh "git clone https://github.com/AymanMagdy/solving-devops-challenges.git"
+            }   
+        }
+    }
+
+    agent {
+        label 'ubuntu'
+    }
+
+    stages{
         stage('Deployment to AWS') {
             steps {
                 sh "cd ~/python-app-production"
